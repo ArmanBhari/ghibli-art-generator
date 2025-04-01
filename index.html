@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghibli Art Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f3e5ab;
+            padding: 20px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        img {
+            margin-top: 20px;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Ghibli Art Generator</h1>
+    <p>Enter a prompt and generate your own Ghibli-style artwork!</p>
+    <input type="text" id="prompt" placeholder="Enter a prompt...">
+    <button onclick="generateImage()">Generate</button>
+    <br>
+    <img id="result" src="" alt="Generated Image">
+
+    <script>
+        async function generateImage() {
+            let prompt = document.getElementById("prompt").value;
+            let response = await fetch("YOUR_HUGGINGFACE_API", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({"inputs": prompt})
+            });
+            let data = await response.json();
+            document.getElementById("result").src = data.image_url;
+        }
+    </script>
+</body>
+</html>
+
