@@ -6,32 +6,63 @@
     <title>Ghibli Art Generator</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
-            background-color: #f3e5ab;
+            background: linear-gradient(135deg, #f3e5ab, #f5d6b4);
             padding: 20px;
+            color: #333;
         }
-        input, button {
-            margin: 10px;
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        input {
+            width: 80%;
             padding: 10px;
             font-size: 16px;
+            border: 2px solid #ffa726;
+            border-radius: 8px;
+            outline: none;
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 12px 20px;
+            font-size: 16px;
+            background: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #e68900;
         }
         img {
             margin-top: 20px;
-            width: 90%;
+            width: 100%;
             max-width: 500px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Ghibli Art Generator</h1>
-    <p>Enter a prompt and generate your own Ghibli-style artwork!</p>
-    <input type="text" id="prompt" placeholder="Enter a prompt...">
-    <button onclick="generateImage()">Generate</button>
-    <br>
-    <img id="result" src="" alt="Generated Image">
+    <div class="container">
+        <h1>✨ Ghibli Art Generator ✨</h1>
+        <p>Enter a creative prompt and generate your own magical Ghibli-style artwork!</p>
+        <input type="text" id="prompt" placeholder="Describe your dream Ghibli scene...">
+        <br>
+        <button onclick="generateImage()">Generate Art</button>
+        <br>
+        <img id="result" src="" alt="Your Generated Art Appears Here!">
+    </div>
 
     <script>
         async function generateImage() {
@@ -47,4 +78,3 @@
     </script>
 </body>
 </html>
-
